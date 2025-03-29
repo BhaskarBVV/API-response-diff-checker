@@ -17,11 +17,11 @@
 }
 
 .left-api {
-    background-color: white;
-    border: 1px solid #ddd;
+    background-color: #eff0f1;
+    border: 2px solid #c2c0c0;
 }
 
 .right-api {
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
+    background-color: #eff0f1;
+    border: 2px solid #c2c0c0;
 }
