@@ -1,0 +1,25 @@
+<div class="table-responsive scrollable-table">
+    <table class="table table-bordered table-sm">
+        <thead class="table-light">
+            <tr>
+                <th style="width: 5%;"><input type="checkbox" disabled></th>
+                <th style="width: 40%;">
+                    <h6>Key</h6>
+                </th>
+                <th style="width: 40%;">
+                    <h6>Value</h6>
+                </th>
+                <th style="width: 10%;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let param of keyValues; let i = index">
+                <td><input type="checkbox" [(ngModel)]="param.enabled"></td>
+                <td><input type="text" class="form-control form-control-sm" [(ngModel)]="param.key"></td>
+                <td><input type="text" class="form-control form-control-sm" [(ngModel)]="param.value"></td>
+                <td><button class="btn btn-danger btn-sm" (click)="removeParam(i)">✕</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<button class="btn btn-primary btn-sm mt-2" (click)="addParam()">+ Add Param</button>

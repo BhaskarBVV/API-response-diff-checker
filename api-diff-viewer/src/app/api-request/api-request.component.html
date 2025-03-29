@@ -1,0 +1,47 @@
+<div class="container mt-3">
+    <!-- API Request Method & URL -->
+    <div class="d-flex align-items-center mb-3">
+        <select class="form-select w-auto me-2" [(ngModel)]="method">
+            <option *ngFor="let m of methods" [value]="m">{{ m }}</option>
+        </select>
+        <input type="text" class="form-control" [(ngModel)]="url" placeholder="Enter API URL">
+    </div>
+
+    <!-- Tabs for Params, Headers, and Body -->
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <h6>
+                <a class="nav-link active" data-bs-toggle="tab" [href]="'#paramsTab' + instanceId">Params</a>
+            </h6>
+        </li>
+        <li class="nav-item">
+            <h6>
+                <a class="nav-link" data-bs-toggle="tab" [href]="'#headersTab' + instanceId">Headers</a>
+            </h6>
+        </li>
+        <li class="nav-item">
+            <h6>
+                <a class="nav-link" data-bs-toggle="tab" [href]="'#bodyTab' + instanceId">Body</a>
+            </h6>
+        </li>
+    </ul>
+
+    <div class="tab-content p-3 border">
+        <!-- Params Section -->
+        <div [id]="'paramsTab' + instanceId" class="tab-pane fade show active">
+            <app-scrollable-table [keyValues]="params"></app-scrollable-table>
+        </div>
+
+        <!-- Headers Section -->
+        <div [id]="'headersTab' + instanceId" class="tab-pane fade">
+            <app-scrollable-table [keyValues]="headers"></app-scrollable-table>
+        </div>
+
+        <!-- Body Section -->
+        <div [id]="'bodyTab' + instanceId" class="tab-pane fade">
+            <h5>Request Body</h5>
+            <textarea class="form-control" [(ngModel)]="body" rows="5"
+                placeholder="Enter request body in JSON format"></textarea>
+        </div>
+    </div>
+</div>
