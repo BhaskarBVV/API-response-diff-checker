@@ -2,13 +2,14 @@
 
 <div class="api-input-block d-flex justify-content-center">
   <div class="left-api">
-    <h4 class="text-center"><app-api-request instanceId="Left"></app-api-request></h4>
+    <h4 class="text-center"><app-api-request #leftApi instanceId="Left"></app-api-request></h4>
   </div>
   <div class="right-api">
-    <h4 class="text-center"><app-api-request instanceId="Right"></app-api-request></h4>
+    <h4 class="text-center"><app-api-request #rightApi instanceId="Right"></app-api-request></h4>
   </div>
 </div>
 
 <div class="text-center mt-3">
-  <app-compare-response></app-compare-response>
+  <app-compare-response #compareResponse></app-compare-response>
+  <button class="btn btn-primary compare-btn" (click)="compareResponses()">Compare</button>
 </div>

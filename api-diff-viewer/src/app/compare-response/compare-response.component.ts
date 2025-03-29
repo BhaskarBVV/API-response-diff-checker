@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './compare-response.component.css'
 })
 export class CompareResponseComponent {
+  getApiinfo(apiInfo1: any, apiInfo2: any) {
+    console.log(apiInfo1, apiInfo2)
+  }
 
 }
